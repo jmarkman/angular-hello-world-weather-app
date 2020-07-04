@@ -26,11 +26,23 @@
     <p>Enter a ZIP code below to get the weather for that location</p>
 
     <div class="input-group mb-3">
-      <input type="text" class="form-control" placeholder="10001" aria-label="">
+      <input type="text" class="form-control" [(ngModel)]="zipCode" />
       <div class="input-group-append">
-        <button class="btn btn-outline-primary" type="button">Get!</button>
+        <button class="btn btn-outline-primary" type="button" (click)="onLookupButtonClicked()">Get!</button>
       </div>
     </div>
+  </div>
+
+  <div class="table-responsive" *ngIf='weatherData'>
+    <h4 class="weather-data-header">Weather for ZIP Code: {{zipCode}}</h4>
+    <table class="weather-data">
+      <tbody>
+        <tr>
+          <td>City Name: </td>
+          <td>{{weatherData.name}}</td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 </main>
 

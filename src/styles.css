@@ -2,15 +2,8 @@
 @import "~bootstrap/dist/css/bootstrap.min.css";
 @import "~font-awesome/css/font-awesome.min.css";
 
-div.block {
-    margin: 10px;
-    display:  flex;
-    justify-content: center;
-    align-self: center;
-}
-
 .starter-template {
     padding: 3rem 1.5rem;
     text-align: center;
-    margin: 10px;
+    margin: 20px;
 }
