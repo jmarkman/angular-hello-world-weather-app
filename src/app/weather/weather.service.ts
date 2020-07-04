@@ -4,6 +4,7 @@ import { Observable, throwError } from "rxjs";
 import { catchError, tap, map } from "rxjs/operators";
 
 import { Weather } from "./weatherdata";
+import * as weatherApi from "../../weatherApiKey.json";
 
 @Injectable({
     providedIn: 'root'
@@ -12,7 +13,9 @@ export class WeatherService {
     private weatherApiUrl: string = "https://api.openweathermap.org/data/2.5/weather";
     private apiKey: string;
 
-    constructor(private http: HttpClient) { }
+    constructor(private http: HttpClient) {
+        this.apiKey = weatherApi.key;
+    }
 
     getWeatherForZipCode(zipCode: string): Observable<Weather | undefined> {
         let apiUrl: string = `${this.weatherApiUrl}?zip=${zipCode},us&units=Imperial&appid=${this.apiKey}`;

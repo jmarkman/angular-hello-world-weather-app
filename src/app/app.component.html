@@ -26,7 +26,7 @@
     <p>Enter a ZIP code below to get the weather for that location</p>
 
     <div class="input-group mb-3">
-      <input type="text" class="form-control" [(ngModel)]="zipCode" />
+      <input type="text" class="form-control" [(ngModel)]="zipCode" (keydown.enter)="onLookupButtonClicked()"/>
       <div class="input-group-append">
         <button class="btn btn-outline-primary" type="button" (click)="onLookupButtonClicked()">Get!</button>
       </div>
@@ -38,8 +38,24 @@
     <table class="weather-data">
       <tbody>
         <tr>
-          <td>City Name: </td>
+          <td>City Name:</td>
           <td>{{weatherData.name}}</td>
+        </tr>
+        <tr>
+          <td>Current Temperature:</td>
+          <td>{{weatherData.main.temp}}</td>
+        </tr>
+        <tr>
+          <td>Humidity:</td>
+          <td>{{weatherData.main.humidity}}%</td>
+        </tr>
+        <tr>
+          <td>Current Lowest Temperature:</td>
+          <td>{{weatherData.main.temp_min}}</td>
+        </tr>
+        <tr>
+          <td>Current Hightest Temperature:</td>
+          <td>{{weatherData.main.temp_max}}</td>
         </tr>
       </tbody>
     </table>
