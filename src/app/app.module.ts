@@ -5,10 +5,12 @@ import { FormsModule } from "@angular/forms";
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { WeatherDetailComponent } from './weather/weather-detail/weather-detail.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    WeatherDetailComponent
   ],
   imports: [
     BrowserModule,
