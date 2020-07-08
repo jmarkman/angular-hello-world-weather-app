@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, Input} from '@angular/core';
 import { Weather } from '../weather/weatherdata';
 
 @Component({
@@ -6,11 +6,7 @@ import { Weather } from '../weather/weatherdata';
   templateUrl: './weather-detail.component.html',
   styleUrls: ['./weather-detail.component.css']
 })
-export class WeatherDetailComponent implements OnChanges {
+export class WeatherDetailComponent {
   @Input() weatherData: Weather;
   @Input() zipCode: number;
-
-  ngOnChanges(): void {
-    throw new Error("Method not implemented.");
-  }
 }

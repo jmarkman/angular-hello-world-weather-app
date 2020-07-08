@@ -33,33 +33,7 @@
     </div>
   </div>
 
-  <div class="table-responsive" *ngIf='weatherData'>
-    <h4 class="weather-data-header">Weather for ZIP Code: {{zipCode}}</h4>
-    <table class="weather-data">
-      <tbody>
-        <tr>
-          <td>City Name:</td>
-          <td>{{weatherData.name}}</td>
-        </tr>
-        <tr>
-          <td>Current Temperature:</td>
-          <td>{{weatherData.main.temp}}</td>
-        </tr>
-        <tr>
-          <td>Humidity:</td>
-          <td>{{weatherData.main.humidity}}%</td>
-        </tr>
-        <tr>
-          <td>Current Lowest Temperature:</td>
-          <td>{{weatherData.main.temp_min}}</td>
-        </tr>
-        <tr>
-          <td>Current Hightest Temperature:</td>
-          <td>{{weatherData.main.temp_max}}</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
+  <hw-weather-detail [weatherData]="weatherData" [zipCode]="zipCode"></hw-weather-detail>
 </main>
 
 
